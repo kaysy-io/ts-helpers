@@ -1,6 +1,6 @@
 {
     "name": "@kaysy/ts-helpers",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Typescript helpers for web applications",
     "main": "index.js",
     "publishConfig": {
