@@ -1,39 +1,41 @@
 {
-  "name": "@kaysy/ts-helpers",
-  "version": "1.0.0",
-  "description": "Typescript helpers for web applications",
-  "main": "index.js",
-  "keywords": [
-    "typescript",
-    "helpers",
-    "fastify",
-    "web"
-  ],
-  "scripts": {
-    "types": "index.d.ts",
-    "test": "tap --ts ./src/**/*.spec.ts",
-    "copypackage": "cp -rf package.json dist",
-    "build": "rm -rf ./dist && tsc -p ./tsconfig.json && tsc-alias && npm run copypackage"
-  },
-  "dependencies": {
-    "bcryptjs": "^3.0.2"
-  },
-  "devDependencies": {
-    "@types/node": "^22.13.10",
-    "husky": "^9.1.7",
-    "lint-staged": "^15.4.3",
-    "prettier": "^3.5.3",
-    "tsc-alias": "^1.8.11",
-    "typescript": "^5.8.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kaysy-io/ts-helpers.git"
-  },
-  "author": "Kalesh Kaladharan",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/kaysy-io/ts-helpers/issues"
-  },
-  "homepage": "https://github.com/kaysy-io/ts-helpers#readme"
+    "name": "@kaysy/ts-helpers",
+    "version": "1.0.0",
+    "description": "Typescript helpers for web applications",
+    "main": "index.js",
+    "keywords": [
+        "typescript",
+        "helpers",
+        "fastify",
+        "web"
+    ],
+    "scripts": {
+        "types": "index.d.ts",
+        "test": "tap --ts ./src/**/*.spec.ts",
+        "copypackage": "cp -rf package.json dist",
+        "build": "rm -rf ./dist && tsc -p ./tsconfig.json && tsc-alias && npm run copypackage",
+        "publish": "npm run build && cd ./dist && npm publish",
+        "prepare": "husky"
+    },
+    "dependencies": {
+        "bcryptjs": "^3.0.2"
+    },
+    "devDependencies": {
+        "@types/node": "^22.13.10",
+        "husky": "^9.1.7",
+        "lint-staged": "^15.4.3",
+        "prettier": "^3.5.3",
+        "tsc-alias": "^1.8.11",
+        "typescript": "^5.8.2"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kaysy-io/ts-helpers.git"
+    },
+    "author": "Kalesh Kaladharan",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/kaysy-io/ts-helpers/issues"
+    },
+    "homepage": "https://github.com/kaysy-io/ts-helpers#readme"
 }
