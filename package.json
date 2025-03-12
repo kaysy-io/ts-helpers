@@ -17,7 +17,7 @@
         "test": "tap --ts ./src/**/*.spec.ts",
         "copypackage": "cp -rf package.json dist",
         "build": "rm -rf ./dist && tsc -p ./tsconfig.json && tsc-alias && npm run copypackage",
-        "publish": "npm run build && npm publish dist",
+        "publish": "npm run build && npm publish ./dist",
         "prepare": "husky"
     },
     "dependencies": {
