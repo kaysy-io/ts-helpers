@@ -3,6 +3,9 @@
     "version": "1.0.0",
     "description": "Typescript helpers for web applications",
     "main": "index.js",
+    "publishConfig": {
+        "access": "public"
+    },
     "keywords": [
         "typescript",
         "helpers",
