@@ -8,16 +8,16 @@ import { MongoConnectionOption } from './types/mongo-connection-option.type';
  * Encrypts the given plain text using the given algorithm and parameters.
  *
  * @param {String} plainText
- * @param {String} password
+ * @param {String} key
  * @param {String} algorithm
  * @param {String|null} iv
  * @returns
  */
-export const encrypt = (plainText: string, password: string, algorithm = 'aes-128-cbc', iv = null) => {
-    const passwordBuffer = Buffer.from(password, 'utf-8');
-    const ivBuffer = Buffer.from(iv == null ? password : iv, 'utf-8');
+export const encrypt = (plainText: string, key: string, algorithm = 'aes-128-cbc', iv = null) => {
+    const keyBuffer = Buffer.from(key, 'utf-8');
+    const ivBuffer = Buffer.from(iv == null ? key : iv, 'utf-8');
 
-    const cipher = crypto.createCipheriv(algorithm, passwordBuffer, ivBuffer);
+    const cipher = crypto.createCipheriv(algorithm, keyBuffer, ivBuffer);
 
     const encrypted = Buffer.concat([cipher.update(plainText, 'utf-8'), cipher.final()]);
 
@@ -84,8 +84,8 @@ export const get = (object: any, key: string, defaultValue: any = null) => {
 
 /**
  * Returns true if the application is running in production ie, `NODE_ENV` value is `production`
- * 
- * @returns 
+ *
+ * @returns
  */
 export const isProduction = () => {
     return process.env.NODE_ENV === 'production';
